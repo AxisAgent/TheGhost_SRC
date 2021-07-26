@@ -1,6 +1,7 @@
 local plr = game.Players.LocalPlayer
 local char = plr.Character
 local hum = char:WaitForChild('Humanoid')
+local loaded = hum:LoadAnimation(script.Parent.RUN)
 local uis = game:GetService("UserInputService")
 local stamina = Instance.new("IntValue")
 stamina.Value = 100
@@ -9,13 +10,15 @@ local running = false
 uis.InputBegan:Connect(function(ip)
 	if ip.KeyCode == Enum.KeyCode.LeftShift then
 		if stamina.Value > 1 then
-			running = true
+	            loaded:Play()
+		    running = true
 		end
 		hum.WalkSpeed = 21
 	end
 end)
 uis.InputEnded:Connect(function(ip)
 	if ip.KeyCode == Enum.KeyCode.LeftShift then
+		loaded:Stop()
 		running = false
 	    hum.WalkSpeed = 16
 	end
