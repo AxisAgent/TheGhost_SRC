@@ -7,7 +7,7 @@ RunService:BindToRenderStep("ArmTransparency", Enum.RenderPriority.Camera.Value 
      local ch = Character:GetChildren()
      for c = 1, #ch do
 		if ch[c]:IsA("BasePart") then
-     		if string.match(ch[c].Name,"Hand") or string.match(ch[c].Name, "Arm") then
+     		if string.match(ch[c].Name,"Hand") or string.match(ch[c].Name, "Arm") or string.match(ch[c].Name,"Leg") then
            		ch[c].LocalTransparencyModifier = 0
 			end
 		end
