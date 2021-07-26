@@ -10,10 +10,11 @@ local running = false
 uis.InputBegan:Connect(function(ip)
 	if ip.KeyCode == Enum.KeyCode.LeftShift then
 		if stamina.Value > 1 then
+		    script.Breath:Stop()
 	            loaded:Play()
 		    running = true
-		end
 		hum.WalkSpeed = 21
+		end
 	end
 end)
 uis.InputEnded:Connect(function(ip)
@@ -35,6 +36,7 @@ while true do
 		print(stamina.Value)
     	if stamina.Value < 1 then
 			hum.WalkSpeed = 13
+			script.Breath:Play()
 			running = false
 		end
 	end
