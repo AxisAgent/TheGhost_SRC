@@ -34,6 +34,7 @@ while true do
 		script.Parent.ImageLabel.TweenFrame:TweenSize(UDim2.new(xScale,xOffset,0, 38),Enum.EasingDirection.In,Enum.EasingStyle.Quad,0.1)
 		print(stamina.Value)
     	if stamina.Value < 1 then
+			hum.WalkSpeed = 13
 			running = false
 		end
 	end
