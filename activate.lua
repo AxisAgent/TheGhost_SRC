@@ -1,0 +1,5 @@
+script.Parent.Triggered:Connect(function()
+	workspace.HellHour:FireAllClients()
+	wait(1)
+	script.Parent:Destroy()
+end)
